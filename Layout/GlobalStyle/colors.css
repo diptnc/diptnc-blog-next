@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+:root {
+
+}
+
+html[data-theme="light"] {
+    --body-bg: #fafafa;
+
+    --color-primary: #6600ff;
+    --color-secondary: #0b0913;
+    --color-tertiary1: #ffffff;
+    --color-tertiary2: #0f0f1b;
+    --color-header: 255,255,255;
+    --color-primary-text: #000000;
+    --color-secondary-text: #222222;
+    --color-tertiary-text: #3a3a3a;
+    --border-color: #e5e5e5;
+
+    --color-gray: rgb(235, 235, 235);
+    --primary: rgb(14, 12, 12);
+    --primary-2: rgb(255, 255, 255);
+
+    --card-bg: rgb(255, 255, 255);
+    --card-bg-rgb: 255, 255, 255;
+
+
+    --footer-bg: #0c011d;
+    --footer-small-color: rgb(224, 224, 224);
+
+    --color-tag: rgb(234, 238, 255);
+  }
+
+  html[data-theme="dark"] {
+    --body-bg: #040511;
+
+    --color-primary: #6600ff;
+    --color-secondary: #0d052e;
+    --color-tertiary1: #030303;
+    --color-tertiary2: #000000;
+    --color-header:4,5,17;
+    --color-primary-text: #ffffff;
+    --color-secondary-text: #fcfcfc;
+    --color-tertiary-text: #fdfdff;
+    --border-color: #120536;
+
+    --color-gray: rgb(2, 11, 22);
+    --primary: rgb(14, 12, 12);
+    --primary-2: rgb(14, 9, 44);
+
+    --card-bg: rgb(14, 6, 34);
+    --card-bg-rgb: 14, 6, 34;
+
+
+
+    --footer-bg: #0c011d;
+    --footer-small-color: rgb(224, 224, 224);
+
+    --color-tag: rgb(21, 27, 58);
+  }
+
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: var(--body-bg);
+}
+
+main {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(var(--primary) 0%, var(--primary-2) 100%);
+    /* width */
+
+}
+
+main::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+main::-webkit-scrollbar-track {
+    background: var(--secondary);
+}
+
+/* Handle */
+main::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+}
+
+/* Handle on hover */
+main::-webkit-scrollbar-thumb:hover {
+    background: var(--color-tertiary1);
+}

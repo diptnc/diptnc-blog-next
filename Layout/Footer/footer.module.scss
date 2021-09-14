@@ -1,0 +1,20 @@
+.footer {
+  background-color: var(--footer-bg);
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.small {
+  color: var(--footer-small-color);
+  font-size: 12px;
+  a {
+    //neon color in hex
+    text-decoration: none;
+    color: #e2df09;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

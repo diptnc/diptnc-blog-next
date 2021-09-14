@@ -1,0 +1,61 @@
+$news: #f34235;
+$tech: #3163ee;
+$entertainment: #9b26af;
+$education: #928617;
+$uncategorised: #009587;
+.category_News {
+  background: rgba($news, 1);
+  color: whitesmoke;
+  border: 1px solid;
+  transition: all 0.3s ease-in-out;
+  border-color: rgba($news, 0.3);
+  &:hover {
+    background: rgba($news, 0.3);
+    color: $news;
+  }
+}
+.category_Tech {
+  background: rgba($tech, 1);
+  color: whitesmoke;
+  border: 1px solid;
+  transition: all 0.3s ease-in-out;
+  border-color: rgba($tech, 0.3);
+  &:hover {
+    background: rgba($tech, 0.3);
+    color: $tech;
+  }
+}
+
+.category_Entertainment {
+  background: rgba($news, 1);
+  color: whitesmoke;
+  border: 1px solid;
+  transition: all 0.3s ease-in-out;
+  border-color: rgba($news, 0.3);
+  &:hover {
+    background: rgba($news, 0.3);
+    color: $news;
+  }
+}
+.category_Education {
+  background: rgba($education, 1);
+  color: whitesmoke;
+  border: 1px solid;
+  transition: all 0.3s ease-in-out;
+  border-color: rgba($education, 0.3);
+  &:hover {
+    background: rgba($education, 0.3);
+    color: $education;
+  }
+}
+.category_Uncategorised {
+  background: rgba($uncategorised, 1);
+  color: whitesmoke;
+  border: 1px solid;  
+  transition: all 0.3s ease-in-out;
+  border-color: rgba($uncategorised, 0.3);
+  &:hover {
+    background: rgba($uncategorised, 0.3);
+    color: $uncategorised;
+  }
+}

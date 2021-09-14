@@ -1,0 +1,23 @@
+.slider_btn {
+  // background: turquoise;
+  position: relative;
+  text-align: center;
+  button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--color-primary);
+    // width: 50%;
+    //disabled btn style
+    transition: all 0.3s ease-in-out;
+    &:disabled {
+      color: gray;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import "../../Layout/GlobalStyle/_variables.scss";
+
+.card{
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+}
+.header{
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--color-tertiary-text);
+    margin-bottom: 10px;
+
+}
+.share{
+ button{
+     margin-right: 10px;
+     font-size: 1.5rem !important;
+
+    
+     &:hover{
+        color: var(--color-primary) !important;
+
+     }
+ }
+ button:nth-child(1){
+    color: orange !important;
+ }
+ button:nth-child(2){
+    color: rgb(0, 60, 255) !important;
+ }
+ button:nth-child(3){
+    color: rgb(0, 102, 255) !important;
+ }
+ button:nth-child(4){
+    color: rgb(0, 119, 255) !important;
+ }
+ button:nth-child(5){
+    color: rgb(0, 174, 255) !important;
+ }
+ button:nth-child(6){
+    color: rgb(10, 228, 119) !important;
+ }
+}

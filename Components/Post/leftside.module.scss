@@ -1,0 +1,142 @@
+@import "../../Layout/GlobalStyle/_variables.scss";
+.author {
+  width: 100%;
+  text-align: center;
+  position: relative;
+
+  img {
+    border-radius: 50%;
+    position: relative;
+    margin-top: 10px;
+    z-index: 2;
+    max-width: 70px;
+  }
+}
+
+.name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: var(--color-primary-text);
+  transition: all ease 0.5s;
+  &:hover {
+    color: var(--color-primary-text);
+
+    background: $gradientHeadingBackground;
+
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.designation {
+  font-weight: 400;
+  color: var(--color-tertiary-text);
+  font-size: 0.7rem;
+}
+.date {
+  font-weight: 500;
+
+  font-size: 0.8rem;
+
+  color: var(--color-secondary-text);
+}
+.read {
+  font-weight: 500;
+
+  font-size: 0.8rem;
+
+  color: var(--color-secondary-text);
+}
+.like {
+  background-color: transparent;
+  background: transparent;
+  border: none;
+  color: rgb(235, 8, 57);
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+
+  font-size: 0.8rem;
+
+  color: var(--color-secondary-text);
+}
+
+.separator {
+  background: $gradientTextBackground;
+}
+.tag {
+  background: var(--color-tag);
+  margin: 2px;
+  border-radius: 2px;
+  color: var(--color-tertiary-text);
+  padding: 2px 5px;
+  font-size: 0.7rem;
+  text-decoration: none;
+  transition: all ease-in 0.3s;
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+.author_cover {
+  background: #b2fefa; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0ed2f7,
+    #b2fefa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0ed2f7,
+    #b2fefa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3683.jpg?size=338&ext=jpg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  border-radius: 7px 7px 0px 0px;
+  z-index: 1;
+}
+.card {
+  background: var(--card-bg);
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.error {
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 991px) {
+  .author {
+    img {
+      max-width: 50px;
+    }
+  }
+  .author_cover {
+   
+    height: 70%;
+   
+  }
+  .name {
+    text-align: center;
+  }
+  .designation {
+    text-align: center;
+  }
+  .card {
+  }
+  .info {
+    text-align: center;
+  }
+}

@@ -1,0 +1,10 @@
+.section_header {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--color-primary-text);
+  display: flex;
+  span{
+    margin-left: 0.5rem;
+  }
+}
