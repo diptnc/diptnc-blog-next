@@ -119,10 +119,10 @@ const LeftSide = ({ author, post }) => {
                     </ul>
                     {/* Tags */}
                     <ul className="list-inline text-primary-hover mt-0 mt-lg-3 text-center">
-                        {post.blog_post_tags.map((tag) => {
+                        {post.blog_post_tags.map((tag,index) => {
                             return (
                                 // <li className="list-inline-item">
-                                <a className={styles.tag} href="javascript:">#{tag.text} </a>
+                                <a className={styles.tag} key={index} href="javascript:">#{tag.text} </a>
                                 // </li>
                             )
                         }

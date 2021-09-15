@@ -70,8 +70,8 @@ const PostSlider = (props) => {
                     </div>
                     <div className={`${styles.content} align-self-center`}>
                         <div className={`post-meta mb-3 ${styles.post_description}`}>
-                            {props.post.blog_post_category && props.post.blog_post_category.map((category) => {
-                                return (<a href="javascript:" className={`${styles.category}  category_${category.value}`}><GoPrimitiveDot></GoPrimitiveDot>{category.label}</a>)
+                            {props.post.blog_post_category && props.post.blog_post_category.map((category,index) => {
+                                return (<a href="javascript:" key={index} className={`${styles.category}  category_${category.value}`}><GoPrimitiveDot></GoPrimitiveDot>{category.label}</a>)
                             })}
 
 

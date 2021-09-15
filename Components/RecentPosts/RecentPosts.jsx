@@ -48,7 +48,7 @@ const RecentPosts = (props) => {
                     >
                         {recentPost?recentPost.map((post, index) => {
                             return (
-                                <SmallCards id={index} post={post} />
+                                <SmallCards key={index} id={index} post={post} />
                             )
                         }):
                         (<div></div>)

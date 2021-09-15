@@ -11,7 +11,7 @@ const PostDisplay = (props) => {
 
         {props.posts.map((post,index) => (
 
-            <SinglePost post={post}></SinglePost>
+            <SinglePost key={index} post={post}></SinglePost>
 
 
         ))}

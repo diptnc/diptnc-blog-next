@@ -35,7 +35,7 @@ const CategoryLayout = (props) => {
                 <div className="row justify-content-center">
                     {postOfCategory.map((post, index) => {
                         return (
-                            <CategoryPost name={props.category.cat_name} id={index} post={post} />
+                            <CategoryPost key={index} name={props.category.cat_name} id={index} post={post} />
                         )
 
                     })}

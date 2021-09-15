@@ -76,8 +76,8 @@ const Posts = (props) => {
                                                 <label htmlFor="category " className={styles.cathead}>Category</label>
                                                 <select className={`form-control ${styles.category} `} id="category" onChange={(e) => setCategory(e.target.value)}>
                                                     <option value="">All</option>
-                                                    {selectCategory && selectCategory.map((curr) => {
-                                                        return <option value={curr.cat_slug}>{curr.cat_name}</option>
+                                                    {selectCategory && selectCategory.map((curr,index) => {
+                                                        return <option key={index} value={curr.cat_slug}>{curr.cat_name}</option>
                                                     })
                                                     }
                                                 </select>

@@ -67,7 +67,7 @@ const PopularPost = (props) => {
                     <div className="popular_post_slider_container">
                         {popular ? popular.map((item, index) => {
                             return (
-                                <PostSlider id={index} post={item} />
+                                <PostSlider key={index} id={index} post={item} />
                             )
 
                         }

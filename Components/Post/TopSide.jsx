@@ -11,8 +11,8 @@ const TopSide = (props) => {
 
                     <h1 className={styles.header}>{props.post.blog_post_title}</h1>
                     <div className={`${styles.blog_information}`}>
-                        {props.post.blog_post_category.map((category) => {
-                            return (<a href="javascript:" className={`${styles.category}  category_${category.value}`}><GoPrimitiveDot></GoPrimitiveDot>{category.label}</a>)
+                        {props.post.blog_post_category.map((category,index) => {
+                            return (<a href="javascript:" key={index} className={`${styles.category}  category_${category.value}`}><GoPrimitiveDot></GoPrimitiveDot>{category.label}</a>)
                         })}
                     </div>
                     {/* <hr className={styles.separator} /> */}
