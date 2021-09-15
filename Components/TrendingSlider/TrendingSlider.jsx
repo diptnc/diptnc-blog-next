@@ -23,7 +23,7 @@ const TrendingSlider = (props) => {
     const [contentLoaded, setContentLoaded] = useState(false)
 
 
-console.log(props)
+
 
   useEffect(() => {
   if (trending.length > 0) {

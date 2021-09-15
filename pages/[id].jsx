@@ -1,12 +1,4 @@
 
-export async function getServerSideProps(context) {
-    const pageSlug = context.query.id;
-    const getPostQuery = { 'function': 'getPostBySlug', 'slug': `${pageSlug}` };
-    const getPostResponse = await axios.post(`https://webhooks.mongodb-realm.com/api/client/v2.0/app/diptnc-blog-ngzlx/service/blog_post/incoming_webhook/webhook0`, getPostQuery)
-    return {
-        props: { 'post': getPostResponse.data }
-    }
-}
 
 
 import React, { useState, useEffect } from 'react'
@@ -27,7 +19,15 @@ import NotFoundPage from './404'
 import Seo from '../Components/Seo/Seo'
 
 
+
+
+
+
 const Sticky = typeof window !== `undefined` ? require("sticky-js") : null
+
+
+
+
 
 
 
@@ -87,7 +87,7 @@ const PostSinglePage = (props) => {
     return (
         <>
 
-            <Seo title={post.blog_post_title} content={post.blog_post_content} image={post.blog_post_image_file_url}></Seo>
+            <Seo title={post.blog_post_title} content={post.blog_post_content} image={post.blog_post_image_file_url} tags={post.blog_post_tags}></Seo>
 
 
 
@@ -98,17 +98,17 @@ const PostSinglePage = (props) => {
 
                 <div className="container position-relative" data-sticky-container>
                     <div className="row">
-                        {post ? (<TopSide post={post}></TopSide>) : (<ContentLoader ></ContentLoader>)}
+                        {post ? (<TopSide post={post}></TopSide>) : (null)}
 
 
-                        {author && post ? (<LeftSide author={author} post={post}></LeftSide>) : (<ContentLoader ></ContentLoader>)}
+                        {author && post ? (<LeftSide author={author} post={post}></LeftSide>) : (null)}
 
 
 
-                        {post ? (<PostBody post={post}></PostBody>) : (<ContentLoader ></ContentLoader>)}
+                        {post ? (<PostBody post={post}></PostBody>) : (null)}
 
-                        {post ? (<RightSide blog_title={post.blog_post_title}></RightSide>) : (<ContentLoader ></ContentLoader>
-                        )}
+                        {post ? (<RightSide blog_title={post.blog_post_title}></RightSide>) : (<div></div>)}
+
 
 
 
@@ -124,3 +124,24 @@ const PostSinglePage = (props) => {
 
 
 export default PostSinglePage
+
+
+
+
+export async function getServerSideProps(context) {
+    const pageSlug = context.query.id;
+    const getPostQuery = { 'function': 'getPostBySlug', 'slug': `${pageSlug}` };
+    const getPostResponse = await axios.post(`https://webhooks.mongodb-realm.com/api/client/v2.0/app/diptnc-blog-ngzlx/service/blog_post/incoming_webhook/webhook0`, getPostQuery)
+    if (!getPostResponse.data.length > 0) {
+        return {
+            redirect: {
+                destination: '/404',
+                permanent: false,
+            },
+        }
+    } else {
+        return {
+            props: { 'post': getPostResponse.data }
+        }
+    }
+}

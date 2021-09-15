@@ -23,7 +23,7 @@ const LeftSide = ({ author, post }) => {
 
         const query = { 'function': 'updateWatchCount', 'watch': watch + 1, 'postId': post.blog_post_time_stamp.$numberLong }
         const res = await axios.post(`${process.env.NEXT_API_FETCH_POST}`, query)
-        console.log(res.data, post.blog_post_time_stamp, watch)
+     
 
 
     }
@@ -69,7 +69,7 @@ const LeftSide = ({ author, post }) => {
         var myImage = new Image();
         myImage.src = `${post.blog_post_image_file_url}`;
         myImage.alt = `${post.blog_post_title}`;
-        console.log(myImage);
+
         $(myImage).on('load', function () {
             $(`.post_image`).replaceWith(myImage);
         });

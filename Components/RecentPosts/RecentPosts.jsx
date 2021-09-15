@@ -1,7 +1,7 @@
 import React from 'react'
 import SmallCards from '../SmallCards/SmallCards'
 import Masonry from 'react-masonry-css'
-import '../../Layout/GlobalStyle/masonryLayout.scss'
+
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
@@ -10,8 +10,8 @@ import ContentLoader from '../ContentLoader/ContentLoader'
 
 const RecentPosts = (props) => {
    
-    const demo_data = [{ 'value': 'tech', 'label': 'technology' }, { 'value': 'news', 'label': 'News' }]
-    const [recentPost, setRecentPost] = useState()
+   
+    const [recentPost, setRecentPost] = useState([])
 
 
    
@@ -22,16 +22,18 @@ const RecentPosts = (props) => {
         665: 1
     };
 
-    const getRecent = async () => {
-        const query = { 'function': 'getRecent', 'items': 10 };
-        const res = await axios.post(`${process.env.GATSBY_API_FETCH_POST}`, query)
-        setRecentPost(res.data)
+    // const getRecent = async () => {
+    //     const query = { 'function': 'getRecent', 'items': 10 };
+    //     const res = await axios.post(`${process.env.GATSBY_API_FETCH_POST}`, query)
+    //     setRecentPost(res.data)
 
-        // setContentLoaded(!contentLoaded)
+    //     // setContentLoaded(!contentLoaded)
 
-    }
+    // }
     useEffect(() => {
-        getRecent()
+       if (props.recents) {
+        setRecentPost(props.recents)
+       }
 
     }, [])
 
@@ -49,13 +51,9 @@ const RecentPosts = (props) => {
                                 <SmallCards id={index} post={post} />
                             )
                         }):
-                        (<ContentLoader></ContentLoader>)
+                        (<div></div>)
                         }
-                        {/* <SmallCards cat_slug={demo_data} id="1" image_url="https://ik.imagekit.io/diptnc/sample2" ></SmallCards>
-                        <SmallCards cat_slug={demo_data} id="2" image_url="https://ik.imagekit.io/diptnc/sample1" ></SmallCards>
-                        <SmallCards cat_slug={demo_data} id="3" image_url="https://ik.imagekit.io/diptnc/sample2" ></SmallCards>
-                        <SmallCards cat_slug={demo_data} id="4" image_url="https://ik.imagekit.io/diptnc/sample1" ></SmallCards>
-                        <SmallCards cat_slug={demo_data} id="5" image_url="https://ik.imagekit.io/diptnc/sample2" ></SmallCards> */}
+                     
 
                     </Masonry>
                 </div>

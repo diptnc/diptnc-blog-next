@@ -2,11 +2,14 @@
 
 .post_entry {
   background-color: var(--card-bg);
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 7px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  line-height: normal;
   &:hover {
-      transform: scale(1.02);
+    transform: scale(1.02);
+    line-height: normal;
   }
 }
 .thumbnail {
@@ -29,7 +32,6 @@
   font-weight: 500;
 
   text-decoration: none;
-
 }
 
 .date {
@@ -41,7 +43,7 @@
 .post_heading {
   font-size: 1.1rem;
   font-weight: 700;
-  
+
   a {
     color: var(--color-secondary-text);
 

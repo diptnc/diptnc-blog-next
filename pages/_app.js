@@ -14,8 +14,34 @@ import 'tiny-slider/dist/tiny-slider.css'
 //content loader css
 import '../Components/ContentLoader/contentloader.scss'
 
+//Masory Grid
+import '../Layout/GlobalStyle/masonryLayout.scss'
+
+import Router from 'next/router';
+import { useState } from 'react';
+import LoaderRoute from '../Layout/LoaderRoute/LoaderRoute';
+
+
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const [isLoading, setIsLoading] = useState(false);
+  Router.events.on('routeChangeStart', url => {
+    setIsLoading(true);
+
+  })
+  Router.events.on('routeChangeComplete', url => {
+    setIsLoading(false);
+
+
+  })
+  return (
+
+    <>
+      {isLoading ? <LoaderRoute></LoaderRoute> : <Component {...pageProps} />
+      }
+
+    </>
+
+  )
 }
 
 export default MyApp

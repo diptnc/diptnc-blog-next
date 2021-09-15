@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
-import {GoPrimitiveDot} from 'react-icons/go'
+import Link from 'next/link'
+import { GoPrimitiveDot } from 'react-icons/go'
 
 import $ from 'jquery'
 import * as styles from './categorypost.module.scss'
@@ -59,22 +59,23 @@ const CategoryPost = (props) => {
                             <br></br>
                             <span className={`${styles.date}`}>{`— ${formatedDate.month} ${formatedDate.day}, ${formatedDate.year}`}</span>
                         </div>
-                        <h2 className={`${styles.post_heading}`}><Link to={postLink}>{props.post.blog_post_title}</Link>
+                        <h2 className={`${styles.post_heading}`}><Link href={postLink}>{props.post.blog_post_title}</Link>
                         </h2>
 
-                        <Link to={postLink} className={` d-flex align-items-center ${styles.author_container}`}>
-                            <div className={`${styles.author_pic}`}>
-                                {props.post.blog_post_author_image_url ? <img src={`${props.post.blog_post_author_image_url}`} alt="Image" /> :
-                                    <img src="https://diptanuchakraborty.in/static/media/diptanuchakraborty.9f6010f3.webp" alt="Image" />
-                                }
-                            </div>
+                        <Link href={postLink} >
+                            <a className={` d-flex align-items-center ${styles.author_container}`} >
+                                <div className={`${styles.author_pic}`}>
+                                    {props.post.blog_post_author_image_url ? <img src={`${props.post.blog_post_author_image_url}`} alt="Image" /> :
+                                        <img src="https://diptanuchakraborty.in/static/media/diptanuchakraborty.9f6010f3.webp" alt="Image" />
+                                    }
+                                </div>
 
 
-                            <div className={`${styles.author_text}`}>
-                                <h3>{props.post.blog_post_author_name}</h3>
-                                <h4>{props.post.blog_post_author_designation}</h4>
-                            </div>
-
+                                <div className={`${styles.author_text}`}>
+                                    <h3>{props.post.blog_post_author_name}</h3>
+                                    <h4>{props.post.blog_post_author_designation}</h4>
+                                </div>
+                            </a>
 
                         </Link>
                     </div>

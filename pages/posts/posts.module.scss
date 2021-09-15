@@ -1,0 +1,42 @@
+@import "../../Layout/GlobalStyle/_variables.scss";
+.page-link {
+  position: relative;
+  display: block;
+  color: white;
+  text-decoration: none;
+  background: $gradient;
+  //  border-radius: 50%;
+  font-size: 0.75rem;
+  margin: 5px;
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+
+    background: $gradientTextBackground;
+  }
+}
+.select_container{
+    margin:10px;
+    background-color: var(--card-bg);
+   
+ 
+}
+.cathead {
+  font-size: 0.8rem;
+  color: var(--color-secondary-text);
+  margin-bottom:8px;
+  font-weight: 600;
+}
+.category{
+    background: var(--card-bg);
+    font-size: 0.8rem;
+    color: var(--color-tertiary-text);
+    &:focus{
+    background: var(--card-bg);
+
+    outline: none;
+
+    }
+
+}

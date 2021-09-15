@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
-import  styles from './Header.module.scss'
+import styles from './Header.module.scss'
 import { BiSearchAlt, BiMenu, BiTime } from 'react-icons/bi'
 import { IoLogoFacebook, IoLogoInstagram, IoLogoWhatsapp, IoCloseOutline } from 'react-icons/io5'
 import Link from 'next/link'
@@ -21,7 +21,7 @@ const Header = () => {
 
     useEffect(() => {
 
-//change logo if prefered color scheme is dark
+        //change logo if prefered color scheme is dark
         const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
         if (colorScheme.matches) {
             $('#website_logo').attr('src', black_logo);
@@ -29,7 +29,7 @@ const Header = () => {
         } else {
             $('#website_logo').attr('src', black_logo);
         }
-           
+
 
 
 
@@ -109,25 +109,25 @@ const Header = () => {
         //query
         const query = { "function": "search", "searchquery": search };
 
-        const res = await axios.post(`${process.env.GATSBY_API_FETCH_POST}`, query);
+        const res = await axios.post(`${process.env.NEXT_API_FETCH_POST}`, query);
         setSearchValue(res.data);
 
     }
 
     const handleOnfocus = () => {
- 
-            setSearchFocus(true);
+
+        setSearchFocus(true);
 
 
-        
+
     }
     // const handleOnBlur = () => {
 
     //         setSearchFocus(false);
 
-        
+
     // }
-   //onblur search input hide a field using vanilla js
+    //onblur search input hide a field using vanilla js
     const handleOnBlur = () => {
         setTimeout(() => {
             // add animation
@@ -138,7 +138,7 @@ const Header = () => {
     }
 
 
-    console.log(black_logo);
+
     return (
         <>
             <header className={`${styles.header}`}>
@@ -167,26 +167,30 @@ const Header = () => {
 
                     <div className="row ">
                         <div className={`col-sm-4 align-self-center  ${styles.header_col} ${styles.container1}  `}  >
-                            <form onSubmit={handleSubmit} id="heda" className={styles.search_form}  onFocus={handleOnfocus} onBlur={handleOnBlur} >
+                            <form onSubmit={handleSubmit} id="heda" className={styles.search_form} onFocus={handleOnfocus} onBlur={handleOnBlur} >
                                 < BiSearchAlt className="icon-search2" />
                                 <input type="search" name="post_search" value={search} onChange={handleSearch} id="post_search" className={`form-control ${styles.header_search_input_box}`} placeholder="Search..." />
-                                  {searchFocus ? <div className={` ${styles.searchResults}`} >
-                                {searchValue ? searchValue.map((item, index) => {
-                                    return (
-                                        <div key={index} className={styles.search_result_item}>
-                                            <a href={`/${item.blog_post_title_slug}`}>
-                                                <div className={styles.search_result_item_title}> {index + 1}. {item.blog_post_title}</div>
+                                {searchFocus ? <div className={` ${styles.searchResults}`} >
+                                    {searchValue ? searchValue.map((item, index) => {
+                                        return (
+                                            <div key={index} className={styles.search_result_item}>
+                                                <Link href={`/${item.blog_post_title_slug}`}>
+                                                    <a >
+                                                        <div className={styles.search_result_item_title}> {index + 1}. {item.blog_post_title}</div>
 
-                                            </a>
-                                        </div>
-                                    )
-                                }) : null}
+                                                    </a>
 
 
-                            </div> : ''}
+                                                </Link>
+                                            </div>
+                                        )
+                                    }) : null}
+
+
+                                </div> : ''}
 
                             </form>
-                          
+
 
 
 

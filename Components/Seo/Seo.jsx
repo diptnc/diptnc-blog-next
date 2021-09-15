@@ -39,25 +39,29 @@ const Seo = (props) => {
             <title>{props.title}</title>
             <meta name="title" content={props.title} />
             <meta name="description" content={postExcerpt} />
-            {/* <meta name="keywords" content={props.tags.map((curr)=>(curr.value))}/> */}
+
+            <link rel="shortcut icon" href="/favicon.ico" />
+
+            <meta name="keywords" content={props.tags?props.tags.map((curr)=>(curr.text)):"tripura news today,tripura news channel,tripura news channel live,tripura newspaper,tripura education news,tripura exam news,tripura employment news,tripura government news,google tripura news,tripura news website,www.tripura news today,west tripura news,www.tripura news.com,www.headlines tripura news.com,www.kok tripura news.com,www.tripura times news.com,tripura E news, online tripura news , latest news in india in english,latest news in india today in english,latest news in india sports,latest news in india business,latest news in india bollywood,latest news in india live"}/>
+
             <meta name="robots" content="index, follow" />
             <meta httpequiv="Content-Type" content="text/html; charset=utf-8" />
             <meta name="language" content="English" />
             <meta name="revisit-after" content="1 days" />
             <meta name="author" content="Diptanu chakraborty" />
-            <meta property="og:title" content="Homepage | Blogs | News" />
-            <meta property="og:description" content="A collection of sourced information from various categories is gathered in one location. Get efficient information about the latest trending topics to refresh your mind on a daily basis with updated news about technology, world affairs, current affairs, tutorials, and so on." />
+            <meta property="og:title" content={props.title} />
+            <meta property="og:description"  content={postExcerpt}  />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://blogs.diptanuchakraborty.in" />
+            <meta property="og:url" content={props.link?props.link:"https://blogs.diptanuchakraborty.in"} />
             <meta property="og:image" content="https://cdn.diptanuchakraborty.in/diptanuchakraborty_in/assets/seo/og/og_asset.jpg" />
             <meta property="og:image:alt=" content="Diptanu chakraborty" />
             <meta property="og:site_name" content="Blogs | Diptanuchakraborty.in" />
             <meta property="og:locale" content="en_US" />
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:description" content="A collection of sourced information from various categories is gathered in one location. Get efficient information about the latest trending topics to refresh your mind on a daily basis with updated news about technology, world affairs, current affairs, tutorials, and so on." />
-            <meta name="twitter:title" content="Homepage | Blogs | News" />
+            <meta name="twitter:description"content={postExcerpt} />
+            <meta name="twitter:title"content={props.title} />
             <meta name="twitter:site" content="@diptnc" />
-            <meta name="twitter:image" content={props.image} />
+            <meta name="twitter:image" content={props.image ? props.image :"https://cdn.diptanuchakraborty.in/diptanuchakraborty_in/assets/seo/og/og_asset.jpg" } />
             <link rel="canonical" href="https://blogs.diptanuchakraborty.in" />
             <link rel="alternate" href="https://blogs.diptanuchakraborty.in" hrefLang="en" />
             <link rel="alternate" href="https://blogs.diptanuchakraborty.in" hrefLang="hi" />

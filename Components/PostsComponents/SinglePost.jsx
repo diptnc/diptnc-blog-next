@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
 
 import * as styles from './singlePost.module.scss'
-import { Link } from 'gatsby'
-import {GoPrimitiveDot} from 'react-icons/go'
+import Link from 'next/link'
+import { GoPrimitiveDot } from 'react-icons/go'
 
 const SinglePost = (props) => {
 
@@ -71,11 +71,11 @@ const SinglePost = (props) => {
             <div className=" ">
                 <div className={`${styles.post_entry} d-block `}>
                     <div className="row">
-                        <Link to={postLink}>
-                        <div className={`col-3 ${styles.thumbnail} ` } >
-                          
-                        </div>
-                        </Link>
+                        {/* <Link href={postLink}>
+                            <div className={`col-3 ${styles.thumbnail} `} >
+
+                            </div>
+                        </Link> */}
                         <div className="col">
                             <div className={`${styles.content} align-self-center`}>
                                 <div className={`post-meta mb-3 ${styles.post_description}`}>
@@ -86,22 +86,27 @@ const SinglePost = (props) => {
 
                                     <span className={`${styles.date}`}>{`— ${formatedDate.month} ${formatedDate.day}, ${formatedDate.year}`}</span>
                                 </div>
-                                <h2 className={`${styles.post_heading}`}><Link to={postLink}>{props.post.blog_post_title}</Link>
+                                <h2 className={`${styles.post_heading}`}><Link href={postLink}>{props.post.blog_post_title}</Link>
                                 </h2>
                                 <p className={`${styles.post_text}`}>{postExcerpt}</p>
 
-                                <Link to={postLink} className={` d-flex align-items-center ${styles.author_container}`}>
-                                    <div className={`${styles.author_pic}`}>
-                                        {props.post.blog_post_author_image_url ? <img src={`${props.post.blog_post_author_image_url}`} alt="Image" /> :
-                                            <img src="https://diptanuchakraborty.in/static/media/diptanuchakraborty.9f6010f3.webp" alt="Image" />
-                                        }
-                                    </div>
+                                <Link href={postLink} >
+                                    <a  className={` d-flex align-items-center ${styles.author_container}`}>
+                                        <div className={`${styles.author_pic}`}>
+                                            {props.post.blog_post_author_image_url ? <img src={`${props.post.blog_post_author_image_url}`} alt="Image" /> :
+                                                <img src="https://diptanuchakraborty.in/static/media/diptanuchakraborty.9f6010f3.webp" alt="Image" />
+                                            }
+                                        </div>
 
 
-                                    <div className={`${styles.author_text}`}>
-                                        <h3>{props.post.blog_post_author_name}</h3>
-                                        <h4>{props.post.blog_post_author_designation}</h4>
-                                    </div>
+                                        <div className={`${styles.author_text}`}>
+                                            <h3>{props.post.blog_post_author_name}</h3>
+                                            <h4>{props.post.blog_post_author_designation}</h4>
+                                        </div>
+
+
+                                    </a>
+
 
 
                                 </Link>

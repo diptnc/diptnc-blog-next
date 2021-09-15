@@ -1,24 +1,24 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import CategoryPost from './CategoryPost'
 import * as styles from './categorylayout.module.scss'
 import axios from 'axios'
 const CategoryLayout = (props) => {
-    const demo_data = [{ 'value': 'tech', 'label': 'technology' }, { 'value': 'news', 'label': 'News' }]
-const [postOfCategory, setpostOfCategory] = useState([])
+
+    const [postOfCategory, setpostOfCategory] = useState([])
     const getPostByCategory = async () => {
         const lund = {
             "function": "getPostByCategory",
             "items": 5,
-           "category":`${props.category.cat_slug}`
+            "category": `${props.category.cat_slug}`
         }
-        const response = await axios.post(`${process.env.GATSBY_API_FETCH_POST}`, lund)
+        const response = await axios.post(`${process.env.NEXT_API_FETCH_POST}`, lund)
         setpostOfCategory(response.data)
         // console.log(response.data)
 
     }
     useEffect(() => {
-        
-getPostByCategory()
+
+        getPostByCategory()
     }, [])
     return (
         <>
@@ -37,7 +37,7 @@ getPostByCategory()
                         return (
                             <CategoryPost name={props.category.cat_name} id={index} post={post} />
                         )
-                  
+
                     })}
                 </div>
             </div>

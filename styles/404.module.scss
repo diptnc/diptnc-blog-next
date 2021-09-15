@@ -1,0 +1,49 @@
+@import "../Layout/GlobalStyle/variables.scss";
+.body {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading {
+  // gradient animated text
+  background: -webkit-linear-gradient(#ff0022, #1c0dbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 3.5em;
+}
+
+.subheading {
+  color: var(--color-primary-text);
+  font-weight: 700;
+}
+
+.para {
+  color: var(--color-tertiary-text);
+  margin: 10px;
+}
+.contents {
+  a {
+    margin: 10px;
+    font-size: 16px;
+    &:nth-child(1) {
+      color: white;
+    }
+    &:nth-child(2) {
+      color: var(--color-primary-text);
+    }
+
+    &:hover {
+      background-color: rgba(17, 213, 63, 0.87);
+      border: 1px solid rgb(21, 174, 57);
+      color: white;
+    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      margin-right: 6px;
+    }
+  }
+}
