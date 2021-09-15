@@ -108,7 +108,7 @@ const Posts = (props) => {
                                 <ul className="pagination justify-content-center">
 
 
-                                    {[...Array(pagination)].map((_, index) => <li className="page-item"><a className={`page-link ${styles.pageLink}`} onClick={(e) => setPageNumber(parseInt(index) + 1)} href="#">{index + 1}</a></li>)}
+                                    {[...Array(pagination)].map((_, index) => <li key={index} className="page-item"><a className={`page-link ${styles.pageLink}`} onClick={(e) => setPageNumber(parseInt(index) + 1)} href="#">{index + 1}</a></li>)}
 
                                 </ul>
                             </nav>
