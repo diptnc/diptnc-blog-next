@@ -87,7 +87,7 @@ const PostSinglePage = (props) => {
     return (
         <>
 
-            <Seo title={post.blog_post_title} content={post.blog_post_content} image={post.blog_post_image_file_url} tags={post.blog_post_tags}></Seo>
+            <Seo title={post.blog_post_title} content={post.blog_post_content} type={"article"}  image={post.blog_post_image_file_url} tags={post.blog_post_tags}></Seo>
 
 
 

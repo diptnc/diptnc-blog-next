@@ -51,9 +51,9 @@ const Seo = (props) => {
             <meta name="author" content="Diptanu chakraborty" />
             <meta property="og:title" content={props.title} />
             <meta property="og:description"  content={postExcerpt}  />
-            <meta property="og:type" content="website" />
+            <meta property="og:type" content={props.type?`${props.type}`:"website"} />
             <meta property="og:url" content={props.link?props.link:"https://blogs.diptanuchakraborty.in"} />
-            <meta property="og:image" content="https://cdn.diptanuchakraborty.in/diptanuchakraborty_in/assets/seo/og/og_asset.jpg" />
+            <meta property="og:image" content={props.image ? props.image :"https://cdn.diptanuchakraborty.in/diptanuchakraborty_in/assets/seo/og/og_asset.jpg" }  />
             <meta property="og:image:alt=" content="Diptanu chakraborty" />
             <meta property="og:site_name" content="Blogs | Diptanuchakraborty.in" />
             <meta property="og:locale" content="en_US" />
