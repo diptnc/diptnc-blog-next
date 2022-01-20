@@ -33,3 +33,50 @@
   }
   margin-bottom: 20px;
 }
+
+
+// .top_post_container{
+//   max-width: 800px;
+// }
+
+.top_post_advertisement_container{
+  position: relative;
+ margin-top: 50px;
+  img{ 
+    border-radius: 15px;
+    width: 100%;
+  }
+  
+}
+
+.close_button{
+  font-size: 25px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.top_post_advertisement_container2{
+  position: relative;
+  margin-top:10px;
+   img{ 
+     border-radius: 15px;
+     width: 100%;
+   }
+ }
+
+@media only screen and (max-width:500px) {
+
+  .top_post_advertisement_container{
+   display: none;
+  }
+
+}
+@media only screen and (min-width:499px) {
+
+  .top_post_advertisement_container2{
+   display: none;
+  }
+
+}

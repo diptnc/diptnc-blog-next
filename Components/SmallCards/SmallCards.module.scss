@@ -43,7 +43,7 @@
 .post_heading {
   font-size: 1.1rem;
   font-weight: 700;
-
+  line-height: 1.5;
   a {
     color: var(--color-secondary-text);
 
@@ -61,6 +61,7 @@
 .post_text {
   font-size: 0.8rem;
   font-weight: 500;
+  line-height: 1.6;
   color: var(--color-tertiary-text);
 }
 .author_pic {

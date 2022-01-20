@@ -69,7 +69,7 @@ const TrendingSlider = (props) => {
 
     return (
         <>
-            <div class="container">
+            <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="my-slider">

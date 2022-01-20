@@ -14,7 +14,7 @@ const LoaderRoute = () => {
 
             </div>
             <div className={s.innertext}>
-                <h1>Loading</h1>
+                {/* <h1>Loading</h1> */}
             </div>
         </>
     )
