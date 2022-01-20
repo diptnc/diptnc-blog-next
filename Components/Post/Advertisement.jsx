@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import * as styles from './topside.module.scss'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 
-import adImage from '../../assets/web_wide_template.jpg'
+import adImage from '../../assets/wide-angle-post.jpg'
 import adImage2 from '../../assets/square-angle-post.jpg'
 
 const Advertisement = () => {
