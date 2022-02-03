@@ -33,7 +33,7 @@ const Sticky = typeof window !== `undefined` ? require("sticky-js") : null
 
 const PostSinglePage = (props) => {
     const router = useRouter()
-
+    const link = `https://diptanuchakraborty.in${router.asPath}`;
     const [notfound, setnotfound] = useState(false)
     // if (!LeftSide) {
     //   return null
@@ -87,7 +87,7 @@ const PostSinglePage = (props) => {
     return (
         <>
 
-            <Seo title={post.blog_post_title} content={post.blog_post_content} type={"article"}  image={post.blog_post_image_file_url} tags={post.blog_post_tags}></Seo>
+            <Seo title={post.blog_post_title} link={link} content={post.blog_post_content} type={"article"}  image={post.blog_post_image_file_url} tags={post.blog_post_tags}></Seo>
 
 
 
