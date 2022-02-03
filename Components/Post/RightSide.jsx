@@ -20,8 +20,11 @@ import {
 import { BiMailSend, BiPaperPlane } from 'react-icons/bi';
 import { FiFacebook, FiLinkedin, FiShare2, FiTwitter } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa';
+import {useRouter} from 'next/router';
 const RightSide = (props) => {
-    const url = typeof window !== 'undefined' ? window.location.href : '';
+      const router = useRouter()
+//     const url = typeof window !== 'undefined' ? window.location.href : '';
+      const url = router.asPath;
 
     return (
         <>
