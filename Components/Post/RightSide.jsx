@@ -24,7 +24,7 @@ import {useRouter} from 'next/router';
 const RightSide = (props) => {
       const router = useRouter()
 //     const url = typeof window !== 'undefined' ? window.location.href : '';
-      const url = router.asPath;
+      const url = `https://blogs.diptanuchakraborty.in${router.asPath}`;
 
     return (
         <>
