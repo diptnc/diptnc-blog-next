@@ -38,13 +38,13 @@ const RightSide = (props) => {
                             <BiMailSend></BiMailSend>
                         </EmailShareButton>
 
-                        <FacebookShareButton url={`${url}`} quote={`Check out this article | ${props.blog_title}`} hashtag={"#diptanuchakraborty_in #diptnc"}>
+                        <FacebookShareButton url={`${url}`}  quote={`Check out this article | ${props.blog_title} ${url} `} hashtag={"#diptanuchakraborty_in #diptnc"}>
                             <FiFacebook></FiFacebook>
                         </FacebookShareButton>
 
 
 
-                        <LinkedinShareButton url={`${url}`} title={props.blog_title} description={`Check out this article `} >
+                        <LinkedinShareButton url={`${url}`} title={props.blog_title} description={`Check out this article ${url} `} >
                             <FiLinkedin />
                         </LinkedinShareButton>
 
