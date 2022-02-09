@@ -1,8 +1,6 @@
-
-
 import React from 'react';
 import { getServerSideSitemap, ISitemapField } from 'next-sitemap';
-import axios from 'axios';
+
 
 // This gets called on every request
 export async function getServerSideProps(context) {
@@ -21,9 +19,10 @@ export async function getServerSideProps(context) {
 
     const val = content.map((item) => {
         return {
-            url: `https://blogs.diptanuchakraborty.in/${item.blog_post_title_slug}`,
-            changefreq: 'daily',
-            priority: 0.7,
+            loc: `https://blogs.diptanuchakraborty.in/${item.blog_post_title_slug}`,
+         
+            priority: 1,
+            lastmod: new Date().toISOString()
         }
     })
     ISitemapField
