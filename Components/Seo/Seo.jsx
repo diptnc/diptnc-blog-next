@@ -45,7 +45,7 @@ const Seo = (props) => {
             <meta name="keywords" content={props.tags?props.tags.map((curr,index)=>(curr.text)):"tripura news today,tripura news channel,tripura news channel live,tripura newspaper,tripura education news,tripura exam news,tripura employment news,tripura government news,google tripura news,tripura news website,www.tripura news today,west tripura news,www.tripura news.com,www.headlines tripura news.com,www.kok tripura news.com,www.tripura times news.com,tripura E news, online tripura news , latest news in india in english,latest news in india today in english,latest news in india sports,latest news in india business,latest news in india bollywood,latest news in india live"}/>
 
             <meta name="robots" content="index, follow" />
-            <meta httpequiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
             <meta name="language" content="English" />
             <meta name="revisit-after" content="1 days" />
             <meta name="author" content="Diptanu chakraborty" />

@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://blogs.diptanuchakraborty.in
+
+# Sitemaps
+Sitemap: https://blogs.diptanuchakraborty.in/sitemap.xml
+Sitemap: https://blogs.diptanuchakraborty.in/sitemap-0.xml
+Sitemap: https://blogs.diptanuchakraborty.in/server-sitemap.xml

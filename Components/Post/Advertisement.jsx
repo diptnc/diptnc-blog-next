@@ -10,18 +10,18 @@ const Advertisement = () => {
 
     return (
         <>
-            <div className={` ${styles.top_post_advertisement_container}`}><a href="https://diptanuchakraborty.in" target="_blank"> <img src={adImage.src} alt="" /></a>
+            <div className={` ${styles.top_post_advertisement_container}`}>
+                <a href="https://diptanuchakraborty.in"  rel="noopener noreferrer"  target="_blank">
+                    <img src={adImage.src} alt="advertisement placeholder" />
+                </a>
 
-                {/* close button */}
-                {/* <button className={`${styles.close_button}`}>
-            <AiOutlineCloseCircle />
-        </button> */}
 
             </div>
-            <div className={` ${styles.top_post_advertisement_container2}`}><a href="https://diptanuchakraborty.in" target="_blank"> <img src={adImage2.src} alt="" /></a>
-                {/* <button className={`${styles.close_button}`}>
-            <AiOutlineCloseCircle />
-        </button> */}
+            <div className={` ${styles.top_post_advertisement_container2}`}>
+                <a href="https://diptanuchakraborty.in" rel="noopener noreferrer"  target="_blank">
+                <img src={adImage2.src} alt="advertisement placeholder" />
+                </a>
+                
             </div>
         </>
     );
