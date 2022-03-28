@@ -4,6 +4,7 @@ $finance:rgb(8, 90, 28);
 $entertainment: #9b26af;
 $education: #928617;
 $uncategorised: #009587;
+$history: rgb(223, 131, 11);
 .category_News {
   background: rgba($news, 1);
   color: whitesmoke;
@@ -70,5 +71,17 @@ $uncategorised: #009587;
   &:hover {
     background: rgba($finance, 0.3);
     color: $finance;
+  }
+}
+
+.category_History {
+  background: rgba($history, 1);
+  color:whitesmoke;
+  border: 1px solid;  
+  transition: all 0.3s ease-in-out;
+  border-color: rgba($history, 0.3);
+  &:hover {
+    background: rgba($history, 0.3);
+    color: $history;
   }
 }
