@@ -6,6 +6,7 @@ import Layout from '../../Layout/Layout'
 import axios from 'axios'
 
 import * as styles from './posts.module.scss'
+import Seo from '../../Components/Seo/Seo'
 
 
 export async function getServerSideProps(context) {
@@ -47,7 +48,7 @@ const Posts = (props) => {
 
 
     useEffect(() => {
-  
+
         if (props.category) {
             setSelectCategory(props.category)
         }
@@ -63,6 +64,12 @@ const Posts = (props) => {
 
     return (
         <>
+            <Seo title="All posts | blogs.diptanuchakraborty.in" content={
+
+                `Welcome to blogs.diptanuchakraborty.in- your number one source for all latest blogs.                
+    We're dedicated to giving you the very best of articles, with a focus on short, simple, satisfaction. We're not a news outlet, but we're a community of people who love to share their knowledge and experience.`
+            }></Seo>
+
             <Layout>
                 <div className="container position-relative">
                     {/* create a menu to select the category,sort order */}
@@ -76,7 +83,7 @@ const Posts = (props) => {
                                                 <label htmlFor="category " className={styles.cathead}>Category</label>
                                                 <select className={`form-control ${styles.category} `} id="category" onChange={(e) => setCategory(e.target.value)}>
                                                     <option value="">All</option>
-                                                    {selectCategory && selectCategory.map((curr,index) => {
+                                                    {selectCategory && selectCategory.map((curr, index) => {
                                                         return <option key={index} value={curr.cat_slug}>{curr.cat_name}</option>
                                                     })
                                                     }
@@ -98,7 +105,7 @@ const Posts = (props) => {
                         </div>
                     </div>
                     {/* display the posts */}
-                    {posts ? <PostDisplay posts={posts}></PostDisplay> :null}
+                    {posts ? <PostDisplay posts={posts}></PostDisplay> : null}
 
 
                     {/* pagination */}

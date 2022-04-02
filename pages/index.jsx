@@ -12,8 +12,8 @@ export async function getServerSideProps(context) {
   const resGetPopular = await axios.post(`${process.env.NEXT_API_FETCH_POST}`, queryGetPopular)
 
 
-    const queryGetCategory = {'function':'getCategory'}
-    const resGetCategory = await axios.post(`${process.env.NEXT_API_FETCH_CATEGORY}`,queryGetCategory)
+  const queryGetCategory = { 'function': 'getCategory' }
+  const resGetCategory = await axios.post(`${process.env.NEXT_API_FETCH_CATEGORY}`, queryGetCategory)
 
 
 
@@ -23,7 +23,7 @@ export async function getServerSideProps(context) {
 
 
   return {
-    props: { 'trending': res.data, 'recents': resGetRecent.data, 'popular': resGetPopular.data,'category':resGetCategory.data }
+    props: { 'trending': res.data, 'recents': resGetRecent.data, 'popular': resGetPopular.data, 'category': resGetCategory.data }
   }
 }
 
@@ -36,10 +36,32 @@ import Heading from '../Components/Heading/Heading'
 import RecentPosts from '../Components/RecentPosts/RecentPosts'
 import PopularPost from '../Components/PopularPost/PopularPost'
 import PostByCategory from '../Components/PostByCategory/PostByCategory'
+import Seo from '../Components/Seo/Seo';
+import { useState, useEffect } from 'react'
+
 const index = (props) => {
+
+  const [recents_post, setRecentsPost] = useState(
+  )
+
+
+
+
+// useEffect(() => {
+  
+//   let html = props.recents[0].blog_post_content
+//     let text = html.replace(/<(?:.|\n)*?>/gm, '')
+//     let excerpt_text = text.substring(0, 800) + '...'
+
+//     setRecentsPost(excerpt_text)
+// }, [])
+
+// console.log(recents_post)
 
   return (
     <>
+    
+      <Seo title="Welcome to blogs.diptanuchakraborty.in" content={`${props.recents[0].blog_post_content}`}></Seo>
       <Layout>
         <Heading text="Trending" position="center"></Heading>
         <TrendingSlider trending={props.trending}></TrendingSlider>

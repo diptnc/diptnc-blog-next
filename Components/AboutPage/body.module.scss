@@ -1,0 +1,29 @@
+.about_page_text_container {
+  // background-color: red;
+  // padding: 15px;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about_page_text_container_inner {
+  max-width: 800px;
+  background-color: white;
+  padding: 15px 25px;
+  line-height: 1.9;
+  font-weight: 500;
+  p {
+    a {
+      padding: 5px 10px;
+      border-radius: 15px;
+      background: rgb(38, 0, 255);
+      color: white;
+
+      &:hover {
+        color: rgb(38, 0, 255);
+        background: rgb(235, 236, 250);
+      }
+    }
+  }
+}
