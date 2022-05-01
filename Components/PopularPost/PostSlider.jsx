@@ -87,7 +87,7 @@ const PostSlider = (props) => {
                             <a className={` d-flex align-items-center ${styles.author_container}`}>
                                 <div className={`${styles.author_pic}`}>
                                     {props.post.blog_post_author_image_url ? <img src={`${props.post.blog_post_author_image_url}`} alt="Image" /> :
-                                        <img src="https://diptanuchakraborty.in/static/media/diptanuchakraborty.9f6010f3.webp" alt="Image" />
+                                        <img src="https://avatars.githubusercontent.com/u/35225642?v=4" alt="Image" />
                                     }
                                 </div>
 
